@@ -17,7 +17,7 @@ pipeline{
     stage('Code coverage'){
       steps{
         sh 'pip install coverage'
-        sh 'coverage run --source=. -m unittest discover -s . "test_calculator.py"
+        sh 'coverage run --source=. -m unittest discover -s . "test_calculator.py"'
         sh 'coverage report -m'
       }
     }
