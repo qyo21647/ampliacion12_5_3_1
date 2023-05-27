@@ -17,7 +17,8 @@ pipeline{
     stage('Code coverage'){
       steps{
         sh 'pip install coverage'
-        sh 'coverage run --source=. -m unittest discover -s . "test_calculator.py"'
+        sh 'export PATH="$PATH:$HOME/.local/bin"' // Agrega esta línea para agregar la ruta al PATH
+        sh 'coverage run --source=. -m unittest discover -s . -p "test_calculator.py"'
         sh 'coverage report -m'
       }
     }
