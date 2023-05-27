@@ -18,7 +18,7 @@ pipeline{
       steps{
         sh 'pip install coverage'
         sh 'export PATH="$PATH:$HOME/.local/bin" && coverage run --source=. -m unittest discover -s . -p "test_calculator.py"'
-        sh 'coverage report -m'
+        sh 'export PATH="$PATH:$HOME/.local/bin" && coverage report -m'
       }
     }
   }
